@@ -52,7 +52,7 @@ a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     th, td {
         padding: 0.5rem;
         font-size: 0.9rem;
