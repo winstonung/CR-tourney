@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Clash — Games Manager</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="addgames.css">
+</head>
+<body>
+  <header>
+    <h1>Games Manager</h1>
+    <div class="top-controls">
+      <button id="downloadBtn">Save games JSON</button>
+      <input id="uploadJson" type="file" accept=".json">
+      <label for="filterSelect">Show:</label>
+      <select id="filterSelect">
+        <option value="all">All</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+      </select>
+      <input id="searchInput" placeholder="Search by player name, tag, or score">
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2 id="formTitle">Add new game</h2>
+      <form id="gameForm">
+        <input type="hidden" id="editGameId" value="">
+        <div class="row">
+          <label>Player 1</label>
+          <select id="player1Select" required></select>
+        </div>
+        <div class="row">
+          <label>Player 2</label>
+          <select id="player2Select" required></select>
+        </div>
+        <div class="row">
+          <label>Date & time</label>
+          <input id="gameDatetime" type="datetime-local" required>
+        </div>
+        <div class="row">
+          <label>Final score (e.g. 3-2)</label>
+          <input id="finalScore" placeholder="leave empty if match not finished">
+        </div>
+        <div class="row">
+            <label>Towers taken down (e.g. 9-3)</label>
+            <input id="towersTakenDown" placeholder="leave empty if match not finished">
+        </div>
+        <div class="row">
+          <label>Attach image (png/jpeg)</label>
+          <input id="imageInput" type="file" accept="image/png,image/jpeg">
+        </div>
+        <div class="row">
+          <img id="imagePreview" class="thumb hidden" alt="preview">
+          <button type="button" id="removeImageBtn" class="danger small hidden">Remove image</button>
+        </div>
+        <div class="actions">
+          <button type="submit" id="saveBtn">Save game</button>
+          <button type="button" id="resetBtn">Reset form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Games</h2>
+      <table id="gamesTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date & Time</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Score</th>
+            <th>Towers Taken</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>Everything is saved/exported as JSON. Images stored as base64 in the JSON.</small>
+  </footer>
+
+  <script src="addgames.js"></script>
+</body>
+</html>
