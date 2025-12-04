@@ -12,11 +12,11 @@ async function loadData() {
 }
 
 function buildLeagueTable() {
-    // Prepare stats for division 1 players
+    // Prepare stats for division 2 players
     const stats = {};
 
     Object.entries(players).forEach(([id, p]) => {
-        if (p.division === 1) {
+        if (p.division === 2) {
             stats[id] = {
                 name: p.username,
                 gamesWon: 0,

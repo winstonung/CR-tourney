@@ -16,7 +16,7 @@ h1 {
     max-width: 400px;
     margin: 0 auto 1rem;
     display: block;
-    border-radius: 5px;
+    border-radius: 100px;
     border: 1px solid #aaa;
 }
 
@@ -28,6 +28,14 @@ h1 {
     border-bottom: 2px solid #ccc;
 }
 
+.division-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 20px;
+}
+
 .game-card {
     background: white;
     padding: 0.75rem;
@@ -35,6 +43,7 @@ h1 {
     border-radius: 6px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-left: 20px;
 }
 
 .game-title {
@@ -57,20 +66,22 @@ h1 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .timestamp-heading {
         font-size: 1.2rem;
     }
 
     .game-title {
-        font-size: 1rem;
+        font-size: 20px;
     }
 
     .score {
-        font-size: 0.9rem;
+        font-size: 15px;
     }
 
     #searchInput {
-        max-width: 100%;
+        max-width: 40vw;
+        padding: 40px;
+        font-size: 20px;
     }
 }

@@ -1,25 +1,8 @@
 /* ===========================
    Data: your idplayers.json
    =========================== */
-const playersById = {
-  "1": {"username":"YM.MMV","tag":"#VLLQRY9R","trophies":15146,"division":1},
-  "2": {"username":"mightydestroyer","tag":"#29GGRLURR","trophies":15145,"division":1},
-  "3": {"username":"Ant","tag":"#YQY98PUR","trophies":15140,"division":1},
-  "4": {"username":"JamieCopyrite","tag":"#CLPGGJUPQ","trophies":15010,"division":1},
-  "5": {"username":"Drie","tag":"#GQCVJY2","trophies":15000,"division":1},
-  "6": {"username":"winnie","tag":"#UY9LG089","trophies":14250,"division":1},
-  "7": {"username":"Beigehydra","tag":"#VPYRPY09P","trophies":13800,"division":1},
-  "8": {"username":"Rayhan","tag":"#L080LL8GG","trophies":13255,"division":1},
-  "9": {"username":"Toondevil19913","tag":"#P2RYJRJ90","trophies":13235,"division":1}
-};
 
-fetch("idplayers.json")
-    .then(response => response.json())
-    .then(item => {
-        const playersById = item;
-        // Initial render
-        init();
-    });
+let playersById = {};
 
 /* ===========================
    App state
@@ -128,8 +111,14 @@ gameForm.addEventListener('submit', (e) => {
   const p2 = player2Select.value;
   if(p1 === p2){ alert('Player 1 and Player 2 must be different'); return; }
 
-  const dtLocal = gameDatetime.value;
-  if(!dtLocal){ alert('Please choose date and time'); return; }
+  const dateOnly = gameDatetime.value; // YYYY-MM-DD from <input type="date">
+  if (!dateOnly) {
+      alert("Please choose a date");
+      return;
+  }
+  const fixedTime = "12:30"; // 12:30 PM
+  // Combine date + fixed time → "YYYY-MM-DDT12:30"
+  const dtLocal = `${dateOnly}T${fixedTime}`;
   const iso = localToISO(dtLocal);
   const score = finalScore.value.trim();
   const towers = towersTakenDown.value.trim();
@@ -314,7 +303,11 @@ searchInput.addEventListener('input', renderGames);
 /* ===========================
    Init
    =========================== */
-(function init(){
+async function init() {
+  const response = await fetch("idplayers.json");
+  playersById = await response.json();
   populatePlayerSelects();
   renderGames();
-})();
+}
+init();
+

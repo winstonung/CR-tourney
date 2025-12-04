@@ -26,6 +26,8 @@ function renderGames(filter = "") {
 
     Object.entries(games).forEach(([id, game]) => {
         const datetime = new Date(game.datetime);
+        const now = new Date(2025, 12, 31); // fixed date for past games
+        if (datetime > now) return; // skip future games
 
         // get day of the week + full date and time
         const dayOfWeek = datetime.toLocaleDateString(undefined, { weekday: 'long' });
@@ -51,6 +53,8 @@ function renderGames(filter = "") {
         grouped[dateKey].push({ id, ...game });
     });
 
+    console.log(grouped);
+
 
     // render headings and games
     for (const timestamp in grouped) {
@@ -59,21 +63,31 @@ function renderGames(filter = "") {
         heading.textContent = timestamp;
         container.appendChild(heading);
 
-        grouped[timestamp].forEach(game => {
-            const p1 = players[game.player1]?.username ?? "Unknown";
-            const p2 = players[game.player2]?.username ?? "Unknown";
+        const divisions = [1, 2];
+        for (const division of divisions) {
+            const divisionHeading = document.createElement("div");
+            divisionHeading.className = "division-heading";
+            divisionHeading.textContent = `Division ${division}`;
+            container.appendChild(divisionHeading);
 
-            const card = document.createElement("div");
-            card.className = "game-card";
 
-            card.innerHTML = `
-                <div class="game-title">${p1} vs ${p2}</div>
-                <div class="score">Score: ${game.score ?? "Pending"}</div>
-                ${game.imageData ? `<img class="game-image" src="${game.imageData}" alt="${game.imageName}">` : ""}
-            `;
+            grouped[timestamp].forEach(game => {
+                if (players[game["player1"]]["division"] !== division) return;
+                const p1 = players[game.player1]?.username ?? "Unknown";
+                const p2 = players[game.player2]?.username ?? "Unknown";
 
-            container.appendChild(card);
-        });
+                const card = document.createElement("div");
+                card.className = "game-card";
+
+                card.innerHTML = `
+                    <div class="game-title">${p1} vs ${p2}</div>
+                    <div class="score">Score: ${game.score ?? "Pending"}</div>
+                    ${game.imageData ? `<img class="game-image" src="${game.imageData}" alt="${game.imageName}">` : ""}
+                `;
+
+                container.appendChild(card);
+            });
+        }
     }
 }
 
