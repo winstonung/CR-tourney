@@ -12,11 +12,12 @@ async function loadData() {
 }
 
 function buildLeagueTable() {
-    // Prepare stats for division 2 players
+    // Prepare stats for division 1/2 players
+    divisionPage = document.getElementsByTagName("title")[0].innerText.includes("Division 1") ? 1 : 2;
     const stats = {};
 
     Object.entries(players).forEach(([id, p]) => {
-        if (p.division === 2) {
+        if (p.division === divisionPage) {
             stats[id] = {
                 name: p.username,
                 gamesWon: 0,
@@ -80,23 +81,23 @@ function buildLeagueTable() {
 
     // Sort for ranking
     const leaderboard = Object.values(stats).sort((a, b) => {
-        // 1. Net games
+        // 1. Games won
+        if (b.gamesWon !== a.gamesWon) return b.gamesWon - a.gamesWon;
+        
+        // 2. Net games
         if (b.gamesNet !== a.gamesNet) return b.gamesNet - a.gamesNet;
 
-        // 2. Games won
-        if (b.gamesWon !== a.gamesWon) return b.gamesWon - a.gamesWon;
-
-        // 3. Net rubbers
+        // 3. Rubbers won
+        if (b.rubbersWon !== a.rubbersWon) return b.rubbersWon - a.rubbersWon;
+        
+        // 4. Net rubbers
         if (b.rubbersNet !== a.rubbersNet) return b.rubbersNet - a.rubbersNet;
 
-        // 4. Rubbers won
-        if (b.rubbersWon !== a.rubbersWon) return b.rubbersWon - a.rubbersWon;
+        // 5. Towers won
+        if (b.towersWon !== a.towersWon) return b.towersWon - a.towersWon;
 
-        // 5. Net towers
-        if (b.towersNet !== a.towersNet) return b.towersNet - a.towersNet;
-
-        // 6. Towers won
-        return b.towersWon - a.towersWon;
+        // 6. Net towers
+        return b.towersNet - a.towersNet;
     });
 
 
@@ -132,10 +133,9 @@ function renderTable(leaderboard) {
             <td><b>${rank}</b></td>
             <td><a href="https://royaleapi.com/player/${tag}" target="_blank">${p.name}</a></td>
             <td>${p.gamesWon + p.gamesLost}</td>
-            <td><b>${p.gamesNet}</b></td>
+            <td><b>${p.gamesWon}</b></td>
             <td>${p.rubbersWon + p.rubbersLost}</td>
-            <td><b>${p.rubbersNet}</b></td>
-            <td>${p.towersNet}</td>
+            <td><b>${p.rubbersWon}</b></td>
             <td>${p.towersWon}</td>
             <td>${p.towersLost}</td>
         `;
