@@ -26,7 +26,7 @@ function renderGames(filter = "") {
 
     Object.entries(games).forEach(([id, game]) => {
         const datetime = new Date(game.datetime);
-        const now = new Date(2025, 12, 31); // fixed date for past games
+        const now = new Date();
         if (datetime > now) return; // skip future games
 
         // get day of the week + full date and time
