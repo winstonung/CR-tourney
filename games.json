@@ -143,7 +143,151 @@
       "towersTakenDown": null,
       "imageData": null,
       "imageName": null
+    },
+    "17": {
+      "player1": "1",
+      "player2": "8",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "18": {
+      "player1": "9",
+      "player2": "7",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "19": {
+      "player1": "2",
+      "player2": "5",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "20": {
+      "player1": "3",
+      "player2": "4",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "21": {
+      "player1": "10",
+      "player2": "17",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "22": {
+      "player1": "18",
+      "player2": "16",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "23": {
+      "player1": "11",
+      "player2": "14",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "24": {
+      "player1": "12",
+      "player2": "13",
+      "datetime": "2025-12-10T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "25": {
+      "player1": "1",
+      "player2": "7",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "26": {
+      "player1": "8",
+      "player2": "6",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "27": {
+      "player1": "9",
+      "player2": "5",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "28": {
+      "player1": "2",
+      "player2": "3",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "29": {
+      "player1": "10",
+      "player2": "16",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "30": {
+      "player1": "17",
+      "player2": "15",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "31": {
+      "player1": "18",
+      "player2": "14",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
+    },
+    "32": {
+      "player1": "11",
+      "player2": "12",
+      "datetime": "2025-12-13T12:30:00.000Z",
+      "score": null,
+      "towersTakenDown": null,
+      "imageData": null,
+      "imageName": null
     }
   },
-  "nextGameId": 17
+  "nextGameId": 33
 }

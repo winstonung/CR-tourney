@@ -27,7 +27,8 @@ function renderGames(filter = "") {
     Object.entries(games).forEach(([id, game]) => {
         const datetime = new Date(game.datetime);
         const now = new Date();
-        if (datetime > now) return; // skip future games
+        
+        if (new Date(game.datetime).setHours(0,0,0,0) > new Date().setHours(0,0,0,0)) return;
 
         // get day of the week + full date and time
         const dayOfWeek = datetime.toLocaleDateString(undefined, { weekday: 'long' });
