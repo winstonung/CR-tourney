@@ -58,8 +58,8 @@
       "player1": "13",
       "player2": "16",
       "datetime": "2025-12-03T12:30:00.000Z",
-      "score": "2-0",
-      "towersTakenDown": "5-0",
+      "score": null,
+      "towersTakenDown": null,
       "imageData": null,
       "imageName": null
     },
@@ -112,8 +112,8 @@
       "player1": "10",
       "player2": "18",
       "datetime": "2025-12-06T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "0-2",
+      "towersTakenDown": "0-2",
       "imageData": null,
       "imageName": null
     },
