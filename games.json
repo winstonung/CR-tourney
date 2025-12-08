@@ -31,8 +31,8 @@
       "player1": "5",
       "player2": "6",
       "datetime": "2025-12-03T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "0-2",
+      "towersTakenDown": "0-2",
       "imageData": null,
       "imageName": null
     },
