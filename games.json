@@ -94,8 +94,8 @@
       "player1": "3",
       "player2": "6",
       "datetime": "2025-12-06T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "1-2",
+      "towersTakenDown": "1-2",
       "imageData": null,
       "imageName": null
     },
