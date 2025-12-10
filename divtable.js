@@ -84,17 +84,17 @@ function buildLeagueTable() {
         // 1. Games won
         if (b.gamesWon !== a.gamesWon) return b.gamesWon - a.gamesWon;
         
-        // 2. Net games
-        if (b.gamesNet !== a.gamesNet) return b.gamesNet - a.gamesNet;
-
-        // 3. Rubbers won
+        // 2. Rubbers won
         if (b.rubbersWon !== a.rubbersWon) return b.rubbersWon - a.rubbersWon;
         
+        // 3. Towers won
+        if (b.towersWon !== a.towersWon) return b.towersWon - a.towersWon;
+
         // 4. Net rubbers
         if (b.rubbersNet !== a.rubbersNet) return b.rubbersNet - a.rubbersNet;
-
-        // 5. Towers won
-        if (b.towersWon !== a.towersWon) return b.towersWon - a.towersWon;
+        
+        // 5. Net games
+        if (b.gamesNet !== a.gamesNet) return b.gamesNet - a.gamesNet;
 
         // 6. Net towers
         return b.towersNet - a.towersNet;
