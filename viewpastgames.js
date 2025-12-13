@@ -16,6 +16,21 @@ async function loadData() {
     renderGames();
 }
 
+function renderPlayerName(playerId, direction) {
+    const player = players[playerId];
+    if (!player) return "Unknown";
+
+    const inactiveTag = !player.isActive 
+        ? `<span class="inactive-tag">Inactive</span>`
+        : "";
+
+    if (direction === "left") {
+        return `${inactiveTag} ${player.username}`;
+    } else {
+        return `${player.username} ${inactiveTag}`;
+    }
+}
+
 function renderGames(filter = "") {
     container.innerHTML = "";
 
@@ -30,6 +45,7 @@ function renderGames(filter = "") {
         
         if (new Date(game.datetime).setHours(0,0,0,0) > new Date().setHours(0,0,0,0)) return;
 
+
         // get day of the week + full date and time
         const dayOfWeek = datetime.toLocaleDateString(undefined, { weekday: 'long' });
         const datePart = datetime.toLocaleDateString(); // e.g., 12/3/2025
@@ -38,8 +54,8 @@ function renderGames(filter = "") {
         const dateKey = `${dayOfWeek} ${datePart} ${timePart}`; // e.g., "Wednesday, 12/3/2025 12:30"
 
         // player lookup
-        const p1 = players[game.player1]?.username ?? "Unknown";
-        const p2 = players[game.player2]?.username ?? "Unknown";
+        const p1 = renderPlayerName(game.player1, "left");
+        const p2 = renderPlayerName(game.player2, "right");
 
         // apply search filter
         if (
@@ -74,8 +90,8 @@ function renderGames(filter = "") {
 
             grouped[timestamp].forEach(game => {
                 if (players[game["player1"]]["division"] !== division) return;
-                const p1 = players[game.player1]?.username ?? "Unknown";
-                const p2 = players[game.player2]?.username ?? "Unknown";
+                const p1 = renderPlayerName(game.player1, "left");
+                const p2 = renderPlayerName(game.player2, "right");
 
                 const card = document.createElement("div");
                 card.className = "game-card";

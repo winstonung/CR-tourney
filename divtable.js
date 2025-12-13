@@ -11,6 +11,20 @@ async function loadData() {
     buildLeagueTable();
 }
 
+function renderPlayerName(player, direction, tag) {
+    if (!player) return "Unknown";
+
+    const inactiveTag = !player.isActive 
+        ? `<span class="inactive-tag">Inactive</span>`
+        : "";
+
+    if (direction === "left") {
+        return `${inactiveTag} <a href="${tag}" target="_blank">${player.name}</a>`;
+    } else {
+        return `<a href="${tag}" target="_blank">${player.name}</a> ${inactiveTag}`;
+    }
+}
+
 function buildLeagueTable() {
     // Prepare stats for division 1/2 players
     divisionPage = document.getElementsByTagName("title")[0].innerText.includes("Division 1") ? 1 : 2;
@@ -28,7 +42,8 @@ function buildLeagueTable() {
                 rubbersNet: 0,
                 towersWon: 0,
                 towersLost: 0,
-                towersNet: 0
+                towersNet: 0,
+                isActive: p.isActive
             };
         }
     });
@@ -131,7 +146,7 @@ function renderTable(leaderboard) {
 
         row.innerHTML = `
             <td><b>${rank}</b></td>
-            <td><a href="https://royaleapi.com/player/${tag}" target="_blank">${p.name}</a></td>
+            <td>${renderPlayerName(p, "right", `https://royaleapi.com/player/${tag}`)}</td>
             <td>${p.gamesWon + p.gamesLost}</td>
             <td><b>${p.gamesWon}</b></td>
             <td>${p.rubbersWon + p.rubbersLost}</td>

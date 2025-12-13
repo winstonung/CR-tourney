@@ -10,6 +10,20 @@ fetch("players.json")
 const tableBody = document.querySelector("#playersTable tbody");
 const searchInput = document.getElementById("searchInput");
 
+function renderPlayerName(player, direction) {
+    if (!player) return "Unknown";
+
+    const inactiveTag = !player.isActive 
+        ? `<span class="inactive-tag">Inactive</span>`
+        : "";
+
+    if (direction === "left") {
+        return `${inactiveTag} ${player.username}`;
+    } else {
+        return `${player.username} ${inactiveTag}`;
+    }
+}
+
 function loadPlayers(list) {
     tableBody.innerHTML = "";
 
@@ -18,7 +32,7 @@ function loadPlayers(list) {
 
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${player.username}</td>
+            <td>${renderPlayerName(player, "right")}</td>
             <td>${player.tag}</td>
             <td>${player.division}</td>
             <td><a href="https://royaleapi.com/player/${cleanTag}" target="_blank">View Profile</a></td>

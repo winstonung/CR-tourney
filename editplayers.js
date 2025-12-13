@@ -16,6 +16,7 @@ function renderPlayers() {
             <td>${player.tag}</td>
             <td>${player.trophies}</td>
             <td>${player.division}</td>
+            <td>${player.isActive ? "Yes" : "No"}</td>
             <td>
                 <button onclick="editPlayer(${index})">Edit</button>
                 <button onclick="removePlayer(${index})">Delete</button>
@@ -34,9 +35,10 @@ form.addEventListener("submit", (e) => {
     const tag = document.getElementById("tag").value;
     const trophies = document.getElementById("trophies").value;
     const division = document.getElementById("division").value;
+    const isActive = document.getElementById("isActive").checked;
     const editIndex = document.getElementById("editIndex").value;
 
-    const playerData = { username, tag, trophies: Number(trophies), division: Number(division) };
+    const playerData = { username, tag, trophies: Number(trophies), division: Number(division), isActive };
 
     if (editIndex === "") {
         players.push(playerData);
@@ -62,6 +64,7 @@ function editPlayer(index) {
     document.getElementById("tag").value = p.tag;
     document.getElementById("trophies").value = p.trophies;
     document.getElementById("division").value = p.division;
+    document.getElementById("isActive").checked = p.isActive;
     document.getElementById("editIndex").value = index;
 }
 

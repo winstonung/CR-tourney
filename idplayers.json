@@ -3,108 +3,126 @@
         "username": "YM.MMV",
         "tag": "#VLLQRY9R",
         "trophies": 15146,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "2": {
         "username": "mightydestroyer",
         "tag": "#29GGRLURR",
         "trophies": 15145,
-        "division": 1
+        "division": 1,
+        "isActive": false
     },
     "3": {
         "username": "Ant",
         "tag": "#YQY98PUR",
         "trophies": 15140,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "4": {
         "username": "JamieCopyrite",
         "tag": "#CLPGGJUPQ",
         "trophies": 15010,
-        "division": 1
+        "division": 1,
+        "isActive": false
     },
     "5": {
         "username": "Drie",
         "tag": "#GQCVJY2",
         "trophies": 15000,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "6": {
         "username": "winnie",
         "tag": "#UY9LG089",
         "trophies": 14250,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "7": {
         "username": "Beigehydra",
         "tag": "#VPYRPY09P",
         "trophies": 13800,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "8": {
         "username": "Rayhan",
         "tag": "#L080LL8GG",
         "trophies": 13255,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "9": {
         "username": "Toondevil19913",
         "tag": "#P2RYJRJ90",
         "trophies": 13235,
-        "division": 1
+        "division": 1,
+        "isActive": true
     },
     "10": {
         "username": "superhsw3",
         "tag": "#89820QPOJ",
         "trophies": 11000,
-        "division": 2
+        "division": 2,
+        "isActive": true
     },
     "11": {
         "username": "ahyan",
         "tag": "#8LCQQGR89",
         "trophies": 9865,
-        "division": 2
+        "division": 2,
+        "isActive": true
     },
     "12": {
         "username": "KenCatson",
         "tag": "#J2G2JUOJ8",
         "trophies": 9738,
-        "division": 2
+        "division": 2,
+        "isActive": true
     },
     "13": {
         "username": "charvi",
         "tag": "#JOUJVGJPY",
         "trophies": 9712,
-        "division": 2
+        "division": 2,
+        "isActive": true
     },
     "14": {
         "username": "omarclone",
         "tag": "#YRG8CC08",
         "trophies": 9232,
-        "division": 2
+        "division": 2,
+        "isActive": false
     },
     "15": {
         "username": "sidXplaySS",
         "tag": "#PG9Q02Q0",
         "trophies": 9028,
-        "division": 2
+        "division": 2,
+        "isActive": false
     },
     "16": {
         "username": "harryluvicec",
         "tag": "#20YU92U9Q",
         "trophies": 8118,
-        "division": 2
+        "division": 2,
+        "isActive": false
     },
     "17": {
         "username": "hhh",
         "tag": "#2PQVQ20VU",
         "trophies": 6714,
-        "division": 2
+        "division": 2,
+        "isActive": true
     },
     "18": {
         "username": "chewy",
         "tag": "#QJJLULLCR",
         "trophies": 15000,
-        "division": 2
+        "division": 2,
+        "isActive": true
     }
 }
