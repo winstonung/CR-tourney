@@ -41,11 +41,17 @@ function renderGames(filter = "") {
 
     Object.entries(games).forEach(([id, game]) => {
         const datetime = new Date(game.datetime);
-        const now = new Date();
         
-        if (new Date(game.datetime).setHours(0,0,0,0) > new Date().setHours(0,0,0,0)) return;
-        if (game.score) return;
+        let viewType = document.getElementsByTagName("h1")[0].innerText;
+        if (viewType.toLowerCase().startsWith("past") || viewType.toLowerCase().startsWith("unplayed")) {
+            if (new Date(game.datetime).setHours(0,0,0,0) > new Date().setHours(0,0,0,0)) return;
+        } else if (viewType.toLowerCase().startsWith("future")) {
+            if (new Date(game.datetime).setHours(0,0,0,0) < new Date().setHours(0,0,0,0)) return;
+        }
 
+        if (viewType.toLowerCase().startsWith("unplayed")) {
+            if (game.score) return;
+        }
 
         // get day of the week + full date and time
         const dayOfWeek = datetime.toLocaleDateString(undefined, { weekday: 'long' });

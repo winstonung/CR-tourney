@@ -144,6 +144,14 @@ function renderTable(leaderboard) {
             rank = prevPlayer[6];
         }
 
+        if (rank === 1) {
+            rank = '🥇';
+        } else if (rank === 2) {
+            rank = '🥈';
+        } else if (rank === 3) {
+            rank = '🥉';
+        }
+
         row.innerHTML = `
             <td><b>${rank}</b></td>
             <td>${renderPlayerName(p, "right", `https://royaleapi.com/player/${tag}`)}</td>
@@ -154,6 +162,14 @@ function renderTable(leaderboard) {
             <td>${p.towersWon}</td>
             <td>${p.towersLost}</td>
         `;
+
+        if (rank === '🥇') {
+            rank = 1;
+        } else if (rank === '🥈') {
+            rank = 2;
+        } else if (rank === '🥉') {
+            rank = 3;
+        }
 
         prevPlayer = [p.gamesWon, p.gamesLost, p.rubbersWon, p.rubbersLost, p.towersWon, p.towersLost, rank];
         tbody.appendChild(row);
