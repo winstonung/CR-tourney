@@ -193,8 +193,8 @@ function renderGames(){
       <tr>
         <td>${id}</td>
         <td title="${g.datetime}">${isoToLocalString(g.datetime)}</td>
-        <td>${p1.username} <small>(${p1.tag})</small></td>
-        <td>${p2.username} <small>(${p2.tag})</small></td>
+        <td>${p1.username} ${!p1.isActive ? `<span class="inactive-tag">Inactive</span>` : ''}</td>
+        <td>${p2.username} ${!p2.isActive ? `<span class="inactive-tag">Inactive</span>` : ''}</td>
         <td>${score || '—'}</td>
         <td>${g.towersTakenDown || '—'}</td>
         <td>${imageCell}</td>
@@ -235,9 +235,9 @@ function openEdit(id){
   player2Select.value = g.player2;
   // set datetime-local value from ISO
   const d = new Date(g.datetime);
-  // create value like "YYYY-MM-DDTHH:MM"
+  // create value like "YYYY-MM-DD"
   const pad = (n)=> String(n).padStart(2,'0');
-  const local = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  const local = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
   gameDatetime.value = local;
   finalScore.value = g.score || '';
   towersTakenDown.value = g.towersTakenDown || '';

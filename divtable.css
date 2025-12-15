@@ -59,4 +59,8 @@ tbody tr:hover {
     tr {
         max-height: 200px;
     }
+
+    .inactive-tag {
+    font-size: 25px;
+}
 }
