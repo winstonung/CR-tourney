@@ -55,7 +55,7 @@ nav a:hover {
 }
 
 /* Responsive tweaks for small devices */
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
     .container {
         max-width: 800px; /* prevents overflow on mobile */
         max-height: 800px;
