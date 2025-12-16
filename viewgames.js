@@ -4,6 +4,7 @@ let nextGameId = 0;
 
 const container = document.getElementById("gamesContainer");
 const searchInput = document.getElementById("searchInput");
+const hideInactiveCheckbox = document.getElementById("hideInactiveCheckbox");
 
 async function loadData() {
     const playersData = await fetch("idplayers.json").then(r => r.json());
@@ -52,6 +53,17 @@ function renderGames(filter = "") {
         if (viewType.toLowerCase().startsWith("unplayed")) {
             if (game.score) return;
         }
+
+        const player1 = players[game.player1];
+        const player2 = players[game.player2];
+
+        if (
+            hideInactiveCheckbox.checked &&
+            (!player1?.isActive || !player2?.isActive)
+        ) {
+            return;
+        }
+
 
         // get day of the week + full date and time
         const dayOfWeek = datetime.toLocaleDateString(undefined, { weekday: 'long' });
@@ -116,6 +128,10 @@ function renderGames(filter = "") {
 }
 
 searchInput.addEventListener("input", () => {
+    renderGames(searchInput.value.trim());
+});
+
+hideInactiveCheckbox.addEventListener("change", () => {
     renderGames(searchInput.value.trim());
 });
 
