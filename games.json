@@ -166,8 +166,8 @@
       "player1": "2",
       "player2": "5",
       "datetime": "2025-12-10T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "0-2",
+      "towersTakenDown": "0-2",
       "imageData": null,
       "imageName": null
     },
@@ -175,8 +175,8 @@
       "player1": "3",
       "player2": "4",
       "datetime": "2025-12-10T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "2-0",
+      "towersTakenDown": "2-0",
       "imageData": null,
       "imageName": null
     },
@@ -193,8 +193,8 @@
       "player1": "18",
       "player2": "16",
       "datetime": "2025-12-10T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "2-0",
+      "towersTakenDown": "2-0",
       "imageData": null,
       "imageName": null
     },
@@ -202,8 +202,8 @@
       "player1": "11",
       "player2": "14",
       "datetime": "2025-12-10T12:30:00.000Z",
-      "score": null,
-      "towersTakenDown": null,
+      "score": "2-0",
+      "towersTakenDown": "2-0",
       "imageData": null,
       "imageName": null
     },
